@@ -30,3 +30,21 @@ public void splitStack(Stack<Integer> s) {
     while(!q.isEmpty())
         s.push(q.remove());
 }
+
+/*
+ Alternative way of doing this
+*/
+ public static void splitStack(Stack<Integer> myStack){
+    Queue <Integer> myQ = new LinkedList<Integer>();
+    Queue <Integer> myQN = new LinkedList<Integer>();
+    while(!myStack.isEmpty()){
+      
+      int toPush = myStack.pop();
+      if(toPush >= 0){myQ.add(toPush);}
+      else{myQN.add(toPush);}
+      
+    
+    }
+    for(Integer num : myQN){myStack.push(num);}
+    for(Integer num : myQ){myStack.push(num);}    
+}
